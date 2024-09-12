@@ -25,6 +25,18 @@ public enum CurrencyType {
     }
 
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
-        return null;
+
+        return currency.getType();
     }
 }
+
+//        for (CurrencyType type : CurrencyType.values()) {
+//            String original = type.name();
+//            String newCurrency = currency.getClass().getSimpleName();
+//            if(original.equalsIgnoreCase(newCurrency));
+//        }  return type;
+//        }
+//        }
+//        return null;
+//        }
+//        }
