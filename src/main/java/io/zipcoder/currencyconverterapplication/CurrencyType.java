@@ -15,9 +15,11 @@ public enum CurrencyType {
     YEN(231.68);
 
     private final double rate;
+    private final CurrencyType type;
 
     CurrencyType(double rate) {
         this.rate = rate;
+        this.type = this;
     }
 
     public Double getRate() {
@@ -25,6 +27,6 @@ public enum CurrencyType {
     }
 
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
-        return null;
+        return currency.getType();
     }
 }
