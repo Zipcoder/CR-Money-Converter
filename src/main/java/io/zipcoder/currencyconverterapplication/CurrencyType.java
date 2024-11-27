@@ -1,6 +1,7 @@
 package io.zipcoder.currencyconverterapplication;
 
 public enum CurrencyType {
+
     AUSTRALIAN_DOLLAR(2.70),
     CANADIAN_DOLLAR(2.64),
     CHINESE_YR(13.84),
@@ -25,6 +26,14 @@ public enum CurrencyType {
     }
 
     public static CurrencyType getTypeOfCurrency(ConvertableCurrency currency) {
+
+        for(CurrencyType currencyType : CurrencyType.values()){
+            String currencyTypeName = currencyType.name().replace("_", "");
+            String convertableCurrencyName = currency.getClass().getSimpleName();
+            if(currencyTypeName.equalsIgnoreCase(convertableCurrencyName)) {
+                return currencyType;
+            }
+        }
         return null;
     }
 }
